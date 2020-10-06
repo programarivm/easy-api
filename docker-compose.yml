@@ -5,16 +5,16 @@ services:
       build: .
       container_name: easy_api_php_fpm
       restart: always
-      working_dir: /usr/share/easy-api
+      working_dir: /usr/share/nginx/easy-api
       volumes:
-          - ./:/usr/share/easy-api
+          - ./:/usr/share/nginx/easy-api
           - ./docker/php/php.ini:/usr/local/etc/php/php.ini
 
   nginx:
       image: nginx:1.15
       container_name: easy_api_nginx
       restart: always
-      working_dir: /usr/share/easy-api
+      working_dir: /usr/share/nginx/easy-api
       ports:
           - "80:80"
       volumes:
